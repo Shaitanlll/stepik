@@ -10,8 +10,6 @@ class TestAbs():
     def test_abs1(self,liter):
         self.browser = webdriver.Chrome()
         self.browser.get(f"https://stepik.org/lesson/{liter}/step/1")
-        # https://stepik.org/lesson/236895/step/1
-        # https://stepik.org/lesson/236899/step/1
         self.browser.implicitly_wait(10)
         button = self.browser.find_element(By.CSS_SELECTOR, "a#ember33")
         button.click()
@@ -30,10 +28,6 @@ class TestAbs():
             assert "Correct!" == feedback
         else:
             input3.send_keys(math.log(int(time.time())))
-            # input4 = self.browser.find_element(By.CSS_SELECTOR, "input[class='form-control second']")
-            # input4.send_keys("89996669966")
-            # input5 = self.browser.find_element(By.CSS_SELECTOR, "input[class='form-control second']")
-            # input5.send_keys("Russia")
             button = self.browser.find_element(By.CSS_SELECTOR, "button.submit-submission")
             button.click()
             feedback = self.browser.find_element(
