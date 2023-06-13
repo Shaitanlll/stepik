@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 import pytest
 import math
+import password
 
 @pytest.mark.parametrize('liter', ["236895","236896","236897","236898","236899","236903","236904","236905"])
 class TestAbs():
@@ -15,9 +16,9 @@ class TestAbs():
         button = self.browser.find_element(By.CSS_SELECTOR, "a#ember33")
         button.click()
         input1 = self.browser.find_element(By.CSS_SELECTOR, 'input[name="login"]')
-        input1.send_keys("shaitan.2024@mail.ru")
+        input1.send_keys(password.login)
         input2 = self.browser.find_element(By.CSS_SELECTOR, 'input[name="password"]')
-        input2.send_keys("IslamVorokov01")
+        input2.send_keys(password.password)
         button = self.browser.find_element(By.CSS_SELECTOR, 'button[class="sign-form__btn button_with-loader "]')
         button.click()
         time.sleep(3)
